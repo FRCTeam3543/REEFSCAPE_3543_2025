@@ -25,6 +25,7 @@ import frc.robot.subsystems.swervedrive.SwerveSubsystem;
 import java.io.File;
 import swervelib.SwerveInputStream;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RobotContainer {
 
@@ -36,7 +37,6 @@ public class RobotContainer {
         private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem(lights);
         private final ElevatorSubsystem elevatorSubsystem = new ElevatorSubsystem();
         private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
-
         private final SendableChooser<String> autoChooser = new SendableChooser<>();
 
         SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
@@ -87,6 +87,9 @@ public class RobotContainer {
                 DriverStation.silenceJoystickConnectionWarning(true);
 
                 NamedCommands.registerCommand("test", Commands.print("I EXIST"));
+
+                autoChooser.setDefaultOption("Testing Auto", "New New Auto");
+                SmartDashboard.putData("Auto Mode", autoChooser);
 
                 rotationSubsystem.setDefaultCommand(new RotationCommand(rotationSubsystem));
                 intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem));
