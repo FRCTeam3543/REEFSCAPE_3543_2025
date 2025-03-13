@@ -73,7 +73,7 @@ public class RotationCommand extends Command {
 
             case CORAL_3:
                 rotationSubsystem.stop();
-                SmartDashboard.putString("Claw Position", "OFF");
+                SmartDashboard.putString("Claw Position", "CLAW DOWN");
 
                 break;
 
