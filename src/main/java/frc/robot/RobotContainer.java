@@ -16,8 +16,10 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Claw.IntakeCommand;
 import frc.robot.commands.Claw.RotationCommand;
+import frc.robot.commands.Claw.ClawAutonomous.OuttakeCommand;
 import frc.robot.commands.Climber.ClimberCommand;
 import frc.robot.commands.Elevator.ElevatorCommand;
+import frc.robot.commands.Elevator.ElevatorAutonomous.MoveElevatorToL1;
 import frc.robot.commands.Elevator.ElevatorAutonomous.MoveElevatorToL4;
 import frc.robot.commands.swervedrive.drivebase.EuroVision;
 import frc.robot.subsystems.Climber.ClimberSubsystem;
@@ -96,6 +98,10 @@ public class RobotContainer {
 
                 NamedCommands.registerCommand("test", Commands.print("I EXIST"));
                 NamedCommands.registerCommand("MoveElevatorToL4", new MoveElevatorToL4(elevatorSubsystem));
+                NamedCommands.registerCommand("OuttakeCommand", new OuttakeCommand(intakeSubsystem));
+                NamedCommands.registerCommand("MoveElevatorToL1", new MoveElevatorToL1(elevatorSubsystem));
+
+
 
                 autoChooser.setDefaultOption("Drive", "Testing Auto");
                 autoChooser.setDefaultOption("LEFT MAIN", "Left Side Autonomous");

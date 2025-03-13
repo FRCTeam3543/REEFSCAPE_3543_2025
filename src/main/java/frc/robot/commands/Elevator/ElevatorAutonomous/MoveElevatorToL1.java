@@ -4,18 +4,18 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Claw.RotationSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorSubsystem;
 
-public class MoveElevatorToL4 extends Command {
+public class MoveElevatorToL1 extends Command {
     private final ElevatorSubsystem elevatorSubsystem;
 
-    public MoveElevatorToL4(ElevatorSubsystem elevatorSubsystem) {
+    public MoveElevatorToL1(ElevatorSubsystem elevatorSubsystem) {
         this.elevatorSubsystem = elevatorSubsystem;
         addRequirements(elevatorSubsystem);
     }
 
     @Override
     public void initialize() {
-        elevatorSubsystem.moveToCoralL4();
-        RotationSubsystem.elevatorCoralPositionL4();
+        elevatorSubsystem.moveDown();
+        RotationSubsystem.moveToZero();
     }
 
     @Override
