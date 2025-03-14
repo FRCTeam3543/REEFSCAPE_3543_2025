@@ -101,9 +101,7 @@ public class RobotContainer {
                 NamedCommands.registerCommand("OuttakeCommand", new OuttakeCommand(intakeSubsystem));
                 NamedCommands.registerCommand("MoveElevatorToL1", new MoveElevatorToL1(elevatorSubsystem));
 
-
-
-                autoChooser.setDefaultOption("Drive", "Testing Auto");
+                autoChooser.setDefaultOption("DRIVE STRAIGHT", "Basic Drive Auto");
                 autoChooser.setDefaultOption("LEFT MAIN", "Left Side Autonomous");
                 SmartDashboard.putData("Auto Mode", autoChooser);
 
@@ -128,9 +126,9 @@ public class RobotContainer {
                 Command driveSetpointGenKeyboard = drivebase.driveWithSetpointGeneratorFieldRelative(
                                 driveDirectAngleKeyboard);
                 new Trigger(() -> Constants.OperatorConstants.driverXbox.button(5).getAsBoolean() ||
-                 Constants.OperatorConstants.driverXbox.button(6).getAsBoolean() || 
-                 Constants.OperatorConstants.driverXbox.button(7).getAsBoolean())
-                 .onTrue(new EuroVision(drivebase, null, null, null, null, m_limelight));
+                                Constants.OperatorConstants.driverXbox.button(6).getAsBoolean() ||
+                                Constants.OperatorConstants.driverXbox.button(7).getAsBoolean())
+                                .onTrue(new EuroVision(drivebase, null, null, null, null, m_limelight));
 
                 if (RobotBase.isSimulation()) {
                         drivebase.setDefaultCommand(driveFieldOrientedDirectAngleKeyboard);
