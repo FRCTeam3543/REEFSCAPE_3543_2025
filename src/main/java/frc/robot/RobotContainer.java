@@ -6,6 +6,7 @@ package frc.robot;
 
 import com.pathplanner.lib.auto.NamedCommands;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.RobotBase;
@@ -16,7 +17,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Claw.IntakeCommand;
 import frc.robot.commands.Claw.RotationCommand;
+import frc.robot.commands.Claw.ClawAutonomous.IntakeAutomousCommand;
 import frc.robot.commands.Claw.ClawAutonomous.OuttakeCommand;
+import frc.robot.commands.Claw.ClawAutonomous.StopIntakeCommand;
 import frc.robot.commands.Climber.ClimberCommand;
 import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorAutonomous.MoveElevatorToL1;
@@ -92,6 +95,7 @@ public class RobotContainer {
                         .headingWhile(true);
 
         public RobotContainer() {
+
                 configureBindings();
 
                 DriverStation.silenceJoystickConnectionWarning(true);
@@ -100,9 +104,12 @@ public class RobotContainer {
                 NamedCommands.registerCommand("MoveElevatorToL4", new MoveElevatorToL4(elevatorSubsystem));
                 NamedCommands.registerCommand("OuttakeCommand", new OuttakeCommand(intakeSubsystem));
                 NamedCommands.registerCommand("MoveElevatorToL1", new MoveElevatorToL1(elevatorSubsystem));
+                NamedCommands.registerCommand("StopIntakeCommand", new StopIntakeCommand(intakeSubsystem));
+                NamedCommands.registerCommand("IntakeCommand", new IntakeAutomousCommand(intakeSubsystem));
+
 
                 autoChooser.setDefaultOption("DRIVE STRAIGHT", "Basic Drive Auto");
-                autoChooser.setDefaultOption("LEFT MAIN", "Left Side Autonomous");
+                autoChooser.setDefaultOption("DOUBLE L4 LEFT", "DOUBLE L4 AUTO LEFT");
                 SmartDashboard.putData("Auto Mode", autoChooser);
 
                 rotationSubsystem.setDefaultCommand(new RotationCommand(rotationSubsystem));
@@ -133,7 +140,7 @@ public class RobotContainer {
                 if (RobotBase.isSimulation()) {
                         drivebase.setDefaultCommand(driveFieldOrientedDirectAngleKeyboard);
                 } else {
-                        drivebase.setDefaultCommand(driveRobotOrientedAngularVelocity);
+                        drivebase.setDefaultCommand(driveFieldOrientedAnglularVelocity);
                 }
 
         }

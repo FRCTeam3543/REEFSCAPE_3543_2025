@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystems.Lights.Lights;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to each mode, as
@@ -79,7 +78,6 @@ public class Robot extends TimedRobot
   @Override
   public void disabledInit()
   {
-    Lights.applyScrollingGradient();
     m_robotContainer.setMotorBrake(true);
     disabledTimer.reset();
     disabledTimer.start();

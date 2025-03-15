@@ -1,0 +1,115 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "To Algae Left"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "MoveElevatorToL4"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "OuttakeCommand"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "StopIntakeCommand"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "MoveElevatorToL1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "To Algae Station Left"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "IntakeCommand"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "StopIntakeCommand"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "To Reef From Left"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "MoveElevatorToL4"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "OutTake"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "StopIntakeCommand"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "DOUBLE L4 AUTO",
+  "choreoAuto": false
+}

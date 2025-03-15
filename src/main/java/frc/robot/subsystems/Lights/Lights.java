@@ -8,10 +8,8 @@ import frc.robot.Constants;
 public class Lights extends SubsystemBase {
 
     private final AddressableLED led;
-    private static AddressableLEDBuffer buffer;
+    private final AddressableLEDBuffer buffer;
     public int[] colors = new int[] { 0, 0, 0 };
-    private static int scrollOffset = 0;
-    private final static int scrollSpeed = 1; // Adjust speed (higher = faster)
 
     public Lights() {
         led = new AddressableLED(Constants.LightsConstants.port);
@@ -22,23 +20,18 @@ public class Lights extends SubsystemBase {
         led.start();
     }
 
+
     @Override
     public void periodic() {
-        applyScrollingGradient();
+        for (int i = 0; i < Constants.LightsConstants.length; i++) {
+            setRGB(i, colors[0], colors[1], colors[2]);
+        }
         sendBuffer();
         logValues();
     }
 
     public void setColor(int[] color) {
         colors = color;
-    }
-
-    public static void applyScrollingGradient() {
-        for (int i = 0; i < Constants.LightsConstants.length; i++) {
-            int brightness = (i + scrollOffset) % 255; // Cycling brightness effect
-            buffer.setRGB(i, Constants.LightsConstants.Colors.RED[0], Constants.LightsConstants.Colors.BRIGHT[1], brightness);
-        }
-        scrollOffset = (scrollOffset + scrollSpeed) % 255;
     }
 
     private void logValues() {
