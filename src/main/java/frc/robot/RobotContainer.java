@@ -17,8 +17,8 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Claw.IntakeCommand;
 import frc.robot.commands.Claw.RotationCommand;
-import frc.robot.commands.Claw.ClawAutonomous.IntakeAutomousCommand;
-import frc.robot.commands.Claw.ClawAutonomous.OuttakeCommand;
+import frc.robot.commands.Claw.ClawAutonomous.ReverseIntakeCommand;
+import frc.robot.commands.Claw.ClawAutonomous.RunIntakeCommand;
 import frc.robot.commands.Claw.ClawAutonomous.StopIntakeCommand;
 import frc.robot.commands.Climber.ClimberCommand;
 import frc.robot.commands.Elevator.ElevatorCommand;
@@ -102,10 +102,10 @@ public class RobotContainer {
 
                 NamedCommands.registerCommand("test", Commands.print("I EXIST"));
                 NamedCommands.registerCommand("MoveElevatorToL4", new MoveElevatorToL4(elevatorSubsystem));
-                NamedCommands.registerCommand("OuttakeCommand", new OuttakeCommand(intakeSubsystem));
+                NamedCommands.registerCommand("OuttakeCommand", new ReverseIntakeCommand(intakeSubsystem));
                 NamedCommands.registerCommand("MoveElevatorToL1", new MoveElevatorToL1(elevatorSubsystem));
                 NamedCommands.registerCommand("StopIntakeCommand", new StopIntakeCommand(intakeSubsystem));
-                NamedCommands.registerCommand("IntakeCommand", new IntakeAutomousCommand(intakeSubsystem));
+                NamedCommands.registerCommand("IntakeCommand", new RunIntakeCommand(intakeSubsystem));
 
 
                 autoChooser.setDefaultOption("DRIVE STRAIGHT", "Basic Drive Auto");
