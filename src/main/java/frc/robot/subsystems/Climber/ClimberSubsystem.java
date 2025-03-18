@@ -56,6 +56,6 @@ public class ClimberSubsystem extends SubsystemBase {
      */
     public void moveToCage() {
         stop();
-        closedLoopController.setReference(180, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(170, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 }

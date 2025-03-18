@@ -94,7 +94,7 @@ public class ElevatorSubsystem extends SubsystemBase {
      */
     public void moveToCoralL3() {
         stop();
-        leftClosedLoopController.setReference(11, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        leftClosedLoopController.setReference(10, ControlType.kPosition, ClosedLoopSlot.kSlot0);
 
     }
 

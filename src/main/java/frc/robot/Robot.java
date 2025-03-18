@@ -9,6 +9,9 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.CvSink;
+import edu.wpi.first.cscore.CvSource;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to each mode, as
@@ -20,6 +23,7 @@ public class Robot extends TimedRobot
 
   private static Robot   instance;
   private        Command m_autonomousCommand;
+  Timer m_gcTimer = new Timer();
 
   private RobotContainer m_robotContainer;
 
@@ -28,6 +32,7 @@ public class Robot extends TimedRobot
   public Robot()
   {
     instance = this;
+    m_gcTimer.start();
   }
 
   public static Robot getInstance()
@@ -48,6 +53,9 @@ public class Robot extends TimedRobot
     // Create a timer to disable motor brake a few seconds after disable.  This will let the robot stop
     // immediately when disabled, but then also let it be pushed more 
     disabledTimer = new Timer();
+ //CameraServer.startAutomaticCapture();
+ //CvSink cvSink=CameraServer.getVideo();
+ //CvSource outputStream = CameraServer.putVideo("Blur",640,480);
 
     if (isSimulation())
     {
@@ -70,6 +78,9 @@ public class Robot extends TimedRobot
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+    if (m_gcTimer.advanceIfElapsed(5));{
+      System.gc();
+    }
   }
 
   /**
@@ -131,6 +142,7 @@ public class Robot extends TimedRobot
     } else
     {
       CommandScheduler.getInstance().cancelAll();
+
     }
   }
 
@@ -140,13 +152,15 @@ public class Robot extends TimedRobot
   @Override
   public void teleopPeriodic()
   {
+
+
   }
 
   @Override
   public void testInit()
   {
     // Cancels all running commands at the start of test mode.
-    CommandScheduler.getInstance().cancelAll();
+    // CommandScheduler.getInstance().cancelAll();
   }
 
   /**

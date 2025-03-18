@@ -36,7 +36,6 @@ public class ClimberCommand extends Command {
 
                 break;
             case ClimberDown:
-                ClimberSubsystem.motorForawrds();
                 ClimberSubsystem.moveToCage();
                 SmartDashboard.putString("Climber Position", "DOWN");
                 break;

@@ -75,7 +75,7 @@ public class RotationSubsystem extends SubsystemBase {
      */
     public static void moveToCoralPosition1() {
         stop();
-        closedLoopController.setReference(2.75, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(2.8, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     /**
@@ -83,18 +83,18 @@ public class RotationSubsystem extends SubsystemBase {
      */
     public void moveToCoralPosition2() {
         stop();
-        closedLoopController.setReference(2.238, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(2.24, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
   
     public void moveToCoralPosition3() {
         stop();
-        closedLoopController.setReference(1.7, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(1.8, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     public static void elevatorCoralPositionL4() { // move the L4 voral position
         stop();
-        closedLoopController.setReference(1, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(1.3, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     
