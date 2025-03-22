@@ -40,6 +40,14 @@ public class IntakeSubsystem extends SubsystemBase {
         return intakeLimitSwitch.get();
     }
 
+    @Override
+    public void periodic() {
+        if (isHoldingCoral()) {
+            lights.setColor(Constants.LightsConstants.Colors.RED); // Green when holding
+        } else {
+            lights.setColor(Constants.LightsConstants.Colors.YELLOW); // Yellow when not holding
+        }
+    }
 
     public void launch() {
         this.runIntake(-1.0);

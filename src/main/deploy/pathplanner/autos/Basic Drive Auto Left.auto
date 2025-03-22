@@ -7,13 +7,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Drive Straight"
+            "pathName": "Drive Straight Left"
           }
         }
       ]
     }
   },
   "resetOdom": true,
-  "folder": "New Folder",
+  "folder": "Basic Auto",
   "choreoAuto": false
 }

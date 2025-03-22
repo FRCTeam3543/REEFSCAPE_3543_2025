@@ -3,11 +3,14 @@
   "robotLength": 0.9,
   "holonomicMode": true,
   "pathFolders": [
-    "Autonomous 1"
+    "Autonomous 1",
+    "Basic Paths",
+    "Autonomous 2"
   ],
   "autoFolders": [
-    "New Folder",
-    "DOUBLE L4 AUTO"
+    "Basic Auto",
+    "DOUBLE L4 AUTO",
+    "SINGLE L4 AUTO"
   ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,

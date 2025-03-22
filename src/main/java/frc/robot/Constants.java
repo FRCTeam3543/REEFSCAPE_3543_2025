@@ -29,12 +29,6 @@ public final class Constants
   
   // Maximum speed of the robot in meters per second, used to limit acceleration.
 
-  public static final class AutonConstants
-  {
-
-    public static final PIDConstants TRANSLATION_PID = new PIDConstants(0.7, 0, 0);
-    public static final PIDConstants ANGLE_PID       = new PIDConstants(0.4, 0, 0.01);
-  }
 
   public static final class DrivebaseConstants
   {
@@ -57,7 +51,7 @@ public final class Constants
 
   public static class LightsConstants {
     public static int port = 9;
-    public static int length = 120;
+    public static int length = 100;
 
 
     public static enum LightsType {
@@ -73,7 +67,10 @@ public final class Constants
       public static int[] RED = new int[] { 0, 255, 0 };
       public static int[] BLUE = new int[] { 0, 0, 255 };
       public static int[] MAGENTA = new int[] { 255, 0, 255 };
-      public static int[] BRIGHT = new int[] { 234, 255, 48 };      
+      public static int[] BRIGHT = new int[] { 234, 255, 48 };  
+      public static int[] YELLOW = new int[]{255, 248, 131};
+      public static int[] GREY = new int[]{192, 192, 192};
+
     }
   }
 }

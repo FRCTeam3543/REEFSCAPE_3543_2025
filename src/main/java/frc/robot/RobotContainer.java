@@ -4,22 +4,18 @@
 
 package frc.robot;
 
-import com.pathplanner.lib.auto.NamedCommands;
-
-
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
-import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Claw.IntakeCommand;
 import frc.robot.commands.Claw.RotationCommand;
+import frc.robot.commands.Claw.IntakeAutonomous.IntakeAutonomous;
+import frc.robot.commands.Claw.IntakeAutonomous.OutTakeAutonomous;
+import frc.robot.commands.Claw.IntakeAutonomous.StopIntake;
 import frc.robot.commands.Climber.ClimberCommand;
 import frc.robot.commands.Elevator.ElevatorCommand;
-import frc.robot.commands.Elevator.ElevatorAutonomous.MoveElevatorToL1;
 import frc.robot.commands.Elevator.ElevatorAutonomous.MoveElevatorToL4;
 import frc.robot.subsystems.Climber.ClimberSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorSubsystem;
@@ -29,6 +25,9 @@ import frc.robot.subsystems.Claw.RotationSubsystem;
 import frc.robot.subsystems.swervedrive.SwerveSubsystem;
 
 import java.io.File;
+
+import com.pathplanner.lib.auto.NamedCommands;
+
 import swervelib.SwerveInputStream;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -45,8 +44,6 @@ public class RobotContainer {
         private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
 
         private final SendableChooser<String> autoChooser = new SendableChooser<>();
-
-        
 
         SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
                         () -> Constants.OperatorConstants.driverXbox.getLeftY() * -1,
@@ -96,8 +93,22 @@ public class RobotContainer {
                 DriverStation.silenceJoystickConnectionWarning(true);
 
                 autoChooser.setDefaultOption("DRIVE STRAIGHT LEFT", "Basic Drive Auto Left");
-                //autoChooser.setDefaultOption("DOUBLE L4 LEFT", "DOUBLE L4 AUTO LEFT");
+                autoChooser.setDefaultOption("DOUBLE L4 LEFT", "DOUBLE L4 AUTO LEFT");
                 autoChooser.setDefaultOption("DRIVE STRAIGHT RIGHT", "Basic Drive Auto Right");
+                autoChooser.setDefaultOption("SINGLE L4 MIDDLE", "Single L4 Middle");
+                autoChooser.setDefaultOption("DRIVE STRAIGHT MIDDLE", "Basic Drive Auto Middle");
+
+                 NamedCommands.registerCommand("MoveElevatorToL4", new
+                 MoveElevatorToL4(elevatorSubsystem));
+                 NamedCommands.registerCommand("MoveElevatorToL1", new
+                 MoveElevatorToL4(elevatorSubsystem));
+                 NamedCommands.registerCommand("OutTake", new
+                 OutTakeAutonomous(intakeSubsystem));
+                 NamedCommands.registerCommand("Intake", new
+                 IntakeAutonomous(intakeSubsystem));
+                 NamedCommands.registerCommand("Stop Intake", new
+                 StopIntake(intakeSubsystem));
+
 
                 SmartDashboard.putData("Auto Mode", autoChooser);
 
@@ -119,10 +130,11 @@ public class RobotContainer {
                                 .driveFieldOriented(driveAngularVelocityKeyboard);
                 Command driveSetpointGenKeyboard = drivebase.driveWithSetpointGeneratorFieldRelative(
                                 driveDirectAngleKeyboard);
-               // new Trigger(() -> Constants.OperatorConstants.driverXbox.button(5).getAsBoolean() ||
-                    //            Constants.OperatorConstants.driverXbox.button(6).getAsBoolean() ||
-                     //           Constants.OperatorConstants.driverXbox.button(7).getAsBoolean())
-                     //           .onTrue(new EuroVision(drivebase, null, null, null, null, m_limelight));
+                // new Trigger(() ->
+                // Constants.OperatorConstants.driverXbox.button(5).getAsBoolean() ||
+                // Constants.OperatorConstants.driverXbox.button(6).getAsBoolean() ||
+                // Constants.OperatorConstants.driverXbox.button(7).getAsBoolean())
+                // .onTrue(new EuroVision(drivebase, null, null, null, null, m_limelight));
 
                 if (RobotBase.isSimulation()) {
                         drivebase.setDefaultCommand(driveFieldOrientedDirectAngleKeyboard);

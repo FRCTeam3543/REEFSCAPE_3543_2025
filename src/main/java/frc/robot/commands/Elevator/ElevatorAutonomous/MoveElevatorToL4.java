@@ -14,7 +14,7 @@ public class MoveElevatorToL4 extends Command {
 
     @Override
     public void initialize() {
-        elevatorSubsystem.moveToCoralL4();
+        elevatorSubsystem.moveToCoralL3();
         RotationSubsystem.elevatorCoralPositionL4();
     }
 

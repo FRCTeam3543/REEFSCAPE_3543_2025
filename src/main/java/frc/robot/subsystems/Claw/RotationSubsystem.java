@@ -83,7 +83,7 @@ public class RotationSubsystem extends SubsystemBase {
      */
     public void moveToCoralPosition2() {
         stop();
-        closedLoopController.setReference(2.24, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(2.2, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
   
@@ -100,12 +100,12 @@ public class RotationSubsystem extends SubsystemBase {
     
     public static void moveToIntakingStation() { //move to intake station position
         stop();
-        closedLoopController.setReference(5.3, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(5.42, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     public static void AlgaePosition() { // moves to algae position
         stop();
-        closedLoopController.setReference(3.2, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(3.7, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     /**

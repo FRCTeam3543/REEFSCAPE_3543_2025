@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "To Algae Left"
+            "pathName": "Drive from Middle"
           }
         },
         {
@@ -19,7 +19,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 2.0
           }
         },
         {
@@ -31,7 +31,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 2.0
           }
         },
         {
@@ -50,6 +50,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "DOUBLE L4 AUTO",
+  "folder": "SINGLE L4 AUTO",
   "choreoAuto": false
 }

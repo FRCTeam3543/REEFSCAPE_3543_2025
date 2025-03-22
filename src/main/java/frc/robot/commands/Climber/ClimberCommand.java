@@ -19,7 +19,7 @@ public class ClimberCommand extends Command {
     public static final int NONE = 0;
 
     int getTargetPosition() {
-        if (Constants.OperatorConstants.driverXbox.button(3).getAsBoolean()) {
+        if (Constants.OperatorConstants.operatorXbox.button(9).getAsBoolean()) {
             return ClimberDown;
         }
         return NONE;
