@@ -33,10 +33,10 @@ public class ElevatorSubsystem extends SubsystemBase {
 
         // Get closed-loop controller
         leftClosedLoopController = elevatorMotorLeft.getClosedLoopController();
-
         // PID Controller for manual control
         pidController = new PIDController(0.1, 0.01, 0); // Tune values as needed
         pidController.setTolerance(0.1);
+
 
         // Left motor configuration
         SparkFlexConfig leftconfig = new SparkFlexConfig();
@@ -64,6 +64,8 @@ public class ElevatorSubsystem extends SubsystemBase {
         // Apply configurations to motors
         elevatorMotorLeft.configure(leftconfig, ResetMode.kNoResetSafeParameters, PersistMode.kPersistParameters);
         elevatorMotorRight.configure(rightconfig, ResetMode.kNoResetSafeParameters, PersistMode.kPersistParameters);
+
+       
 
     }
 

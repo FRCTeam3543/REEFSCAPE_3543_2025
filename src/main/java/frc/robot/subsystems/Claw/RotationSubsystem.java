@@ -21,9 +21,6 @@ public class RotationSubsystem extends SubsystemBase {
     private final PIDController pidController;
     private static SparkClosedLoopController closedLoopController;
 
-    // Preset angles in degrees
-    // private static final double[] PRESET_ANGLES = {0, 1.762, 2.238, 2.429,
-    // 5.262};
 
     public RotationSubsystem() {
         rotationMotor = new SparkMax(10, MotorType.kBrushless);
@@ -69,7 +66,7 @@ public class RotationSubsystem extends SubsystemBase {
         closedLoopController.setReference(0.23, ControlType.kPosition, ClosedLoopSlot.kSlot1);
 
     }
-
+    
     /**
      * Moves to coral position 1 (L1 coral reef position).
      */
@@ -81,16 +78,6 @@ public class RotationSubsystem extends SubsystemBase {
     /**
      * Moves to coral position 2 (L2 and L3 coral reef position).
      */
-    public void moveToCoralPosition2() {
-        stop();
-        closedLoopController.setReference(2.2, ControlType.kPosition, ClosedLoopSlot.kSlot0);
-    }
-
-  
-    public void moveToCoralPosition3() {
-        stop();
-        closedLoopController.setReference(1.8, ControlType.kPosition, ClosedLoopSlot.kSlot0);
-    }
 
     public static void elevatorCoralPositionL4() { // move the L4 voral position
         stop();
@@ -105,7 +92,7 @@ public class RotationSubsystem extends SubsystemBase {
 
     public static void AlgaePosition() { // moves to algae position
         stop();
-        closedLoopController.setReference(3.7, ControlType.kPosition, ClosedLoopSlot.kSlot0);
+        closedLoopController.setReference(3.5, ControlType.kPosition, ClosedLoopSlot.kSlot0);
     }
 
     /**

@@ -92,26 +92,6 @@ public class RobotContainer {
                 configureBindings();
                 DriverStation.silenceJoystickConnectionWarning(true);
 
-                autoChooser.setDefaultOption("DRIVE STRAIGHT LEFT", "Basic Drive Auto Left");
-                autoChooser.setDefaultOption("DOUBLE L4 LEFT", "DOUBLE L4 AUTO LEFT");
-                autoChooser.setDefaultOption("DRIVE STRAIGHT RIGHT", "Basic Drive Auto Right");
-                autoChooser.setDefaultOption("SINGLE L4 MIDDLE", "Single L4 Middle");
-                autoChooser.setDefaultOption("DRIVE STRAIGHT MIDDLE", "Basic Drive Auto Middle");
-
-                 NamedCommands.registerCommand("MoveElevatorToL4", new
-                 MoveElevatorToL4(elevatorSubsystem));
-                 NamedCommands.registerCommand("MoveElevatorToL1", new
-                 MoveElevatorToL4(elevatorSubsystem));
-                 NamedCommands.registerCommand("OutTake", new
-                 OutTakeAutonomous(intakeSubsystem));
-                 NamedCommands.registerCommand("Intake", new
-                 IntakeAutonomous(intakeSubsystem));
-                 NamedCommands.registerCommand("Stop Intake", new
-                 StopIntake(intakeSubsystem));
-
-
-                SmartDashboard.putData("Auto Mode", autoChooser);
-
                 rotationSubsystem.setDefaultCommand(new RotationCommand(rotationSubsystem));
                 intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem));
                 elevatorSubsystem.setDefaultCommand(new ElevatorCommand(elevatorSubsystem));

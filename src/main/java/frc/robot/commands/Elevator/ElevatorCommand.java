@@ -69,42 +69,42 @@ public class ElevatorCommand extends Command {
                 RotationSubsystem.moveToCoralPosition1();
                 SmartDashboard.putString("Elevator Position", "REEF L2");
                 break;
-            // A button
+            //Reef Position L2
             case CORAL_2:
                 ElevatorSubsystem.moveToCoralL3();
                 RotationSubsystem.moveToCoralPosition1();
                 SmartDashboard.putString("Elevator Position", "REEF L3");
                 break;
-
+            // Reef Position L3
             case CORAL_3:
                 ElevatorSubsystem.moveToCoralL4();
                 RotationSubsystem.elevatorCoralPositionL4();
                 SmartDashboard.putString("Elevator Position", "REEF L4");
                 break;
-
+            // Reef Position L4
             case CORAL_4:
                 ElevatorSubsystem.stop();
                 SmartDashboard.putString("Elevator Position", "STOP");
                 break;
-
+            // Disable Elevator Motors
             case CORAL_5:
                 ElevatorSubsystem.moveDown();
                 RotationSubsystem.moveToZero();
                 SmartDashboard.putString("Elevator Position", "REEF L1");
                 break;
-
+            // Reef Position L1
             case CORAL_6:
                 ElevatorSubsystem.moveToAlgaeP1();
                 RotationSubsystem.AlgaePosition();
                 SmartDashboard.putString("Elevator Position", "ALGAE 1");
                 break;
-
+            // Reef Position Algae Level 1
             case CORAL_7:
                 ElevatorSubsystem.moveToAlgaeP2();
                 RotationSubsystem.AlgaePosition();
                 SmartDashboard.putString("Elevator Position", "ALGAE 2");
                 break;
-
+            // Reef postition Algae Level 2
             default:
                 // rotationSubsystem.stop();
                 break;
