@@ -1,7 +1,7 @@
-#FRC Team 3543 - C4 Robotics Code for 2024-2025 Reefscape
+# FRC Team 3543 - C4 Robotics Code for 2024-2025 Reefscape
 
-##ARCHIVED CODE: NOT IN USE
-###New Code (:https://github.com/FRCTeam3543/3543_Rebuilt_RobotCode)
+## ARCHIVED CODE: NOT IN USE
+### New Code (:https://github.com/FRCTeam3543/3543_Rebuilt_RobotCode)
 
 Created Using: YAGSL from Bronc Botz, Modified by: Madeline Smith from C4 Robotics
 
