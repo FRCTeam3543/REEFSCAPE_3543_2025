@@ -1,22 +1,108 @@
-# FRC Team 3543 - C4 Robotics Code for 2024-2025 Reefscape
+C4 Robotics – 2024–2025 Season: Reefscape
 
-## ARCHIVED CODE: NOT IN USE
-### New Code: (:https://github.com/FRCTeam3543/3543_Rebuilt_RobotCode)
+Welcome to the official C4 Robotics codebase for the 2024–2025 Reefscape FRC season! This repository contains all code, configuration, and documentation for our robot’s autonomous and teleoperated control systems.
 
-Created Using: YAGSL from Bronc Botz, Modified by: Madeline Smith from C4 Robotics
+🛠️ Overview
+
+The 2024–2025 Reefscape robot features:
+
+Swerve drive system for maximum agility and field coverage
+
+Modular arm and intake mechanisms for efficient game piece handling
+
+Autonomous routines optimized for scoring in key zones
+
+Sensor integration: encoders, gyros, limit switches, and vision (AprilTags)
+
+This code is written in Java using WPILib, following the Command-based programming paradigm. It’s designed to be modular, easy to test, and scalable for new features.
+
+📂 Repository Structure
+/C4-Reefscape-2024
+│
+├─ /src/main/java        # Main robot code
+│   ├─ /subsystems       # Individual subsystems (drive, arm, intake, etc.)
+│   ├─ /commands         # Commands that control the robot behaviors
+│   ├─ /autonomous       # Pre-programmed autonomous routines
+│   └─ Robot.java        # Core Robot class
+│
+├─ /src/main/deploy       # Deployable resources (trajectory files, configs)
+├─ /docs                  # Documentation, diagrams, and notes
+├─ /tests                 # Unit and integration tests
+└─ build.gradle           # Build configuration
+
+⚡ Getting Started
+Requirements:
+
+Java 23
+
+WPILib 2024–2025
+
+Compatible IDE (VS Code or IntelliJ IDEA recommended)
+
+FRC Driver Station for testing
+
+Setup:
+
+Clone the repository:
+
+git clone https://github.com/C4Robotics/Reefscape-2024.git
 
 
+Open in your IDE and install WPILib dependencies.
 
-# Yet Another Generic Swerve Library (YAGSL)
+Connect to the robot and deploy code via the Driver Station.
 
-YAGSL is intended to be an easy implementation of a generic swerve drive that should work for most
-square swerve drives. The project is documented
-on [here](https://github.com/BroncBotz3481/YAGSL/wiki). The JSON documentation can also be
-found [here](docs/START.md)
+🎮 Robot Controls
+
+Driver Controls:
+
+Left Stick – Move robot (translation)
+
+Right Stick – Rotate robot (heading)
+
+Buttons – Intake, outtake, arm positions, etc.
+
+Operator Controls:
+
+Arm control
+
+Intake/outtake operations
+
+Mode switching for autonomous routines
+
+Detailed control mappings are documented in /docs/Controls.md.
+
+🤖 Autonomous Routines
+
+Our autonomous system is modular and uses command groups to allow flexible paths. Key routines include:
+
+ScoreHighCube – Grab and place a cube on the high goal
+
+ScoreHighCone – Grab and place a cone on the high goal
+
+BalancedPark – Drive to charging station and balance
+
+HybridPaths – Combine scoring and mobility strategies
+
+All trajectories are stored in /src/main/deploy/trajectories.
+
+🧪 Testing
+
+Unit and integration tests are included under /tests. Run using:
+
+./gradlew test
 
 
-[Javadocs here](https://broncbotz3481.github.io/YAGSL/)  
-[Library here](https://github.com/BroncBotz3481/YAGSL/)  
-[Code here](https://github.com/BroncBotz3481/YAGSL/tree/main/swervelib)  
-[WIKI](https://github.com/BroncBotz3481/YAGSL/wiki)  
-[Config Generation](https://broncbotz3481.github.io/YAGSL-Example/)
+Tests include subsystem simulation, command verification, and trajectory validation.
+
+📈 Notes / TODOs
+
+Improve autonomous path smoothing
+
+Add more vision-based targeting for cones/cubes
+
+Finalize PID tuning for swerve modules
+
+💡 Contributions
+
+This repository is maintained by Team 3543 – C4 Robotics. Contributions are managed by lead programmers; for access, contact the programming lead.
