@@ -20,7 +20,6 @@ It’s designed to be modular, easy to test, and scalable for new features.
 ---
 
 ## 📂 Repository Structure
-
 /C4-Reefscape-2024
 │
 ├─ /src/main/java # Main robot code
@@ -34,11 +33,6 @@ It’s designed to be modular, easy to test, and scalable for new features.
 ├─ /tests # Unit and integration tests
 └─ build.gradle # Build configuration
 
-yaml
-Copy code
-
----
-
 ## ⚡ Getting Started
 
 ### Requirements
@@ -49,66 +43,47 @@ Copy code
 
 ### Setup
 1. Clone the repository:
-```bash
+```
+``` bash
 git clone https://github.com/C4Robotics/Reefscape-2024.git
+```
 Open in your IDE and install WPILib dependencies.
+onnect to the robot and deploy code via the Driver Station.
 
-Connect to the robot and deploy code via the Driver Station.
+## 🎮 Robot Controls
 
-🎮 Robot Controls
-Driver Controls:
+### Driver Controls:
+- Left Stick – Move robot (translation)
+- Right Stick – Rotate robot (heading)
+- Buttons – Intake, outtake, arm positions, etc.
 
-Left Stick – Move robot (translation)
-
-Right Stick – Rotate robot (heading)
-
-Buttons – Intake, outtake, arm positions, etc.
-
-Operator Controls:
-
-Arm control
-
-Intake/outtake operations
-
-Mode switching for autonomous routines
+### Operator Controls:
+- Arm control
+- Intake/outtake operations
+- Mode switching for autonomous routines
 
 Detailed control mappings are documented in /docs/Controls.md.
 
-🤖 Autonomous Routines
-Our autonomous system is modular and uses command groups to allow flexible paths. Key routines include:
+## 🤖 Autonomous Routines
+- Non-existant
 
-ScoreHighCube – Grab and place a cube on the high goal
-
-ScoreHighCone – Grab and place a cone on the high goal
-
-BalancedPark – Drive to charging station and balance
-
-HybridPaths – Combine scoring and mobility strategies
-
-All trajectories are stored in /src/main/deploy/trajectories.
-
-🧪 Testing
-Unit and integration tests are included under /tests.
+## 🧪 Testing
+- Unit and integration tests are included under /tests.
 Run using:
-
-bash
-Copy code
+```
 ./gradlew test
-Tests include:
+```
 
-Subsystem simulation
+### Tests include:
+- Subsystem simulation
+- Command verification
+- Trajectory validation
 
-Command verification
+## 📈 Notes / TODOs
+- Improve autonomous path smoothing
+- Add more vision-based targeting for cones/cubes
+- Finalize PID tuning for swerve modules
 
-Trajectory validation
-
-📈 Notes / TODOs
-Improve autonomous path smoothing
-
-Add more vision-based targeting for cones/cubes
-
-Finalize PID tuning for swerve modules
-
-💡 Contributions
-This repository is maintained by Team 3543 – C4 Robotics.
-Contributions are managed by lead programmers; for access, contact the programming lead.
+## 💡 Contributions
+- This repository is maintained by Team 3543 – C4 Robotics.
+- Contributions are managed by lead programmers; for access, contact the programming lead.
