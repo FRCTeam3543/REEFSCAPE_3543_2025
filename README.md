@@ -1,4 +1,4 @@
-# C4 Robotics – 2024–2025 Season: **Reefscape**
+# C4 Robotics – 2024–2025 Season: **Reefscape** (ARCHIVED CODE - NOT IN USE)
 
 Welcome to the official **C4 Robotics** codebase for the 2024–2025 **Reefscape** FRC season!  
 This repository contains all code, configuration, and documentation for our robot’s autonomous and teleoperated control systems.
